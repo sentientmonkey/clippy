@@ -1,4 +1,4 @@
-Clippy - Helping you copy text to your clipboard
+Clippy - Helping you copy text to your clipboards
 ================================================
 
 Clippy is a very simple Flash widget that makes it possible to place arbitrary
