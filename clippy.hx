@@ -22,7 +22,7 @@ class Clippy {
     label.textColor = 0x888888;
     label.selectable = false;
     label.x = 15;
-    label.visible = false;
+    label.visible = true;
     
     flash.Lib.current.addChild(label);
     
@@ -52,7 +52,7 @@ class Clippy {
     });
     
     button.addEventListener(MouseEvent.MOUSE_OUT, function(e:MouseEvent) {
-      label.visible = false;
+      label.visible = true;
       label.text = "copy to clipboard";
       label.setTextFormat(format);
     });
