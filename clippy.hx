@@ -14,6 +14,8 @@ class Clippy {
 
   static var text:String;
   static var func:String;
+  static var defaultLabelText:String;
+  static var feedbackLabelText:String;
   static var label:TextField;
   static var button:SimpleButton;
   static var format:TextFormat;
@@ -26,7 +28,7 @@ class Clippy {
       }
     }
     flash.system.System.setClipboard(text);
-    label.text = "copied!";
+    label.text = feedbackLabelText;
     label.setTextFormat(format);
   }
 
@@ -36,7 +38,7 @@ class Clippy {
   
   static function outFunction(e:MouseEvent) {
     label.textColor = 0x888888;
-    label.text = "copy to clipboard";
+    label.text = defaultLabelText;
     label.setTextFormat(format);
   }
 
@@ -44,13 +46,24 @@ class Clippy {
   static function main() {
     text = flash.Lib.current.loaderInfo.parameters.text;
     func = flash.Lib.current.loaderInfo.parameters.func;
+    defaultLabelText = flash.Lib.current.loaderInfo.parameters.label;
+    feedbackLabelText = flash.Lib.current.loaderInfo.parameters.feedback;
+    
+    if(defaultLabelText == null)
+    {
+      defaultLabelText = "copy to clipboard";
+    }
+    if(feedbackLabelText == null)
+    {
+      feedbackLabelText = "copied!";
+    }
     
     // label
     
     label = new TextField();
     format = new TextFormat("Arial", 11);
     
-    label.text = "copy to clipboard";
+    label.text = defaultLabelText;
     label.setTextFormat(format);
     label.textColor = 0x888888;
     label.selectable = false;
