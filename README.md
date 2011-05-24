@@ -60,6 +60,18 @@ SWF, run the following from Clippy's root directory:
 If that is successful, copy `build/clippy.swf` to your
 `public` directory or wherever your static assets can be found.
 
+Options
+-------
+
+Clippy options can be specified using the `FlashVars` parameter; the currently 
+supported options are:
+
+* [text]: the text which will be copied to the user clipboard
+* [func]: a JavaScript callback that will be called after every copy operation
+* [label]: the message displayed next to the clipboard icon (default `copy to clipboard`)
+* [feedback]: the message displayed after a copy operation (default `copied!`) 
+
+
 Contribute
 ----------
 
