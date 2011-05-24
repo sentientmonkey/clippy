@@ -6,7 +6,12 @@ import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
 import flash.external.ExternalInterface;
 
+class ButtonUp extends MovieClip {}
+class ButtonOver extends MovieClip {}
+class ButtonDown extends MovieClip {}
+
 class Clippy {
+
   static var text:String;
   static var func:String;
   static var label:TextField;
@@ -56,10 +61,11 @@ class Clippy {
     // button
     button = new SimpleButton();
     button.useHandCursor = true;
-    button.upState = flash.Lib.attach("button_up");
-    button.overState = flash.Lib.attach("button_over");
-    button.downState = flash.Lib.attach("button_down");
-    button.hitTestState = flash.Lib.attach("button_down");
+    
+    button.upState = new ButtonUp();
+    button.overState = new ButtonOver();
+    button.downState = new ButtonDown();
+    button.hitTestState = new ButtonDown();
     
     label.addEventListener(MouseEvent.MOUSE_UP, upFunction );
     button.addEventListener(MouseEvent.MOUSE_UP, upFunction );

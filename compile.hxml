@@ -1,3 +1,4 @@
+-cp .
 -swf build/clippy.swf
 -swf-version 9
 -swf-lib library.swf
