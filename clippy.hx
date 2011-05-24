@@ -21,7 +21,7 @@ class Clippy {
   static function upFunction (e:MouseEvent) {
     if(ExternalInterface.available) {
       ExternalInterface.marshallExceptions = true;
-      if(func != '') {
+      if(func != '' && func != null) {
         text = ExternalInterface.call(func);
       }
     }
